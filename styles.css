@@ -1,0 +1,466 @@
+/* UPGRADED POPPINS - All weights for perfect rendering */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;  /* Regular */
+  src: url(https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;  /* Semi-bold */
+  src: url(https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEl8.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;  /* Bold */
+  src: url(https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEl8.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;  /* Extra-bold for H1 */
+  src: url(https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLDD4Z1xlFd2JQEl8.woff2) format('woff2');
+}
+/* ROOT VARIABLES */
+:root {
+  --blue: #1b3a66;
+  --red: #c93c3c;
+  --gold: #f4b400;
+  --orange: #ff4500;
+  --green: #00ff41;
+  --bg: #f5f3f0;
+  --white: #fff;
+  --gray: #f8f8f8;
+  --dark-gray: #222;
+}
+
+/* GLOBAL RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--dark-gray);
+  line-height: 1.5;
+}
+
+/* NEW BANNER - Striking colors with full text visibility */
+.banner {
+  background: linear-gradient(135deg, #000000 0%, var(--orange) 50%, var(--red) 100%);
+  color: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255,140,0,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255,140,0,0.4) 0%, transparent 50%),
+    radial-gradient(circle at 50% 10%, rgba(255,255,255,0.2) 0%, transparent 50%);
+  background-size: 100px 100px;
+  animation: sparkle 6s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.banner-overlay {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-overlay h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.banner-overlay h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0 0 2rem 0;
+  color: var(--gold);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* FUNDRAISING MESSAGE - Fixed visibility */
+.fundraising-message {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  line-height: 1.6;
+  margin: 0;
+  background: rgba(255,255,255,0.15);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 3px solid var(--green);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+  color: #ffffff !important;
+   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.02em;  /* Optical kerning */
+}
+
+.fundraising-message p {
+  margin: 0 0 1.2rem 0;
+  color: #141313 !important;
+  font-weight: 400;
+   font-variation-settings: 'wght' 450;  /* Slightly heavier for impact */
+}
+
+.fundraising-message .blessing {
+  font-weight: 700 !important;
+  font-size: 1.4em;
+  color: var(--green) !important;
+  text-shadow: 0 0 20px var(--green);
+  margin-top: 1.5rem !important;
+  animation: glow 2s ease-in-out infinite alternate;
+   font-variation-settings: 'wght' 750;  /* Maximum boldness */
+  letter-spacing: 0.03em;
+}
+
+@keyframes glow {
+  from { 
+    text-shadow: 0 0 15px var(--green), 0 0 25px var(--green); 
+  }
+  to { 
+    text-shadow: 0 0 25px var(--green), 0 0 40px var(--green), 0 0 50px var(--green); 
+  }
+}
+
+/* REST OF YOUR STYLES (cleaned up) */
+.card {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card-left, .card-right {
+  flex: 1 1 280px;
+}
+
+.photo-frame {
+  width: 260px;
+  height: 200px;
+  border: 3px solid var(--gold);
+  border-radius: 14px;
+  background-color: #fbf7ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.photo-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.badge {
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #1f3a5f, var(--gold));
+  color: var(--white);
+  border-radius: 22px;
+  font-weight: 600;
+  text-align: center;
+  width: fit-content;
+}
+
+.verse-text {
+  font-style: italic;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.verse-ref {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.btn {
+  display: inline-block;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn.cashapp { background: #00c244; }
+.btn.cashapp:hover { background: #00a83a; transform: translateY(-2px); }
+.btn.zelle { background: #4a86e8; }
+.btn.zelle:hover { background: #2e64d3; transform: translateY(-2px); }
+.btn.pushpay { background: var(--blue); }
+.btn.pushpay:hover { background: #13223c; transform: translateY(-2px); }
+
+.give h3 {
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.zelle-box, .pushpay-box {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.zelle-box h4, .pushpay-box h4 {
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.zelle-box .note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.event-info {
+  background: var(--gray);
+  padding: 30px 20px;
+  margin: 40px auto;
+  text-align: center;
+  max-width: 900px;
+  color: var(--dark-gray);
+}
+
+.event-info h3 {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  color: var(--blue);
+}
+
+.event-info a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  font-size: 0.9rem;
+  color: #555;
+  background: var(--gray);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .photo-frame {
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .fundraising-message {
+    padding: 1.5rem;
+  }
+}
+
+
+/* PERFECT CARD ALIGNMENT */
+.card {
+  max-width: 950px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  min-height: 600px; /* Ensures equal height */
+  align-items: stretch; /* Stretches both sides equally */
+}
+
+.card-left,
+.card-right {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.card-left {
+  align-items: center;
+  padding: 1rem;
+}
+
+/* LEFT SIDE - Perfect centering */
+.photo-frame {
+  width: 280px;
+  height: 220px;
+  border: 4px solid var(--gold);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fff8e1, #fbf7ef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.photo-frame::after {
+  content: 'Supporter Photo';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--blue), var(--gold));
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(244,180,0,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* RIGHT SIDE - Clean spacing */
+.card-right {
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.verse {
+  background: linear-gradient(135deg, rgba(244,180,0,0.1), rgba(27,58,102,0.05));
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--gold);
+}
+
+.verse-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  margin-bottom: 0.75rem;
+}
+
+.verse-ref {
+  font-weight: 700;
+  color: var(--blue);
+  font-size: 1rem;
+  text-align: right;
+}
+
+.give {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.give h3 {
+  color: var(--blue);
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.give > p {
+  text-align: center;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.zelle-box, .pushpay-box {
+  background: rgba(255,255,255,0.6);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 2px solid #e0e0e0;
+}
+
+.zelle-box h4, .pushpay-box h4 {
+  color: var(--blue);
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+}
+
+/* RESPONSIVE PERFECTION */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .photo-frame {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+}
