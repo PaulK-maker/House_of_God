@@ -514,3 +514,129 @@ body {
   font-size: 1.1rem;
   margin-bottom: 1rem;
 } 
+
+.progress-section {
+  margin: 20px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.progress-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  width: 35%; /* Starts here, JS will update */
+  transition: width 2s ease-in-out;
+  border-radius: 10px;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '35%';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.progress-text {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Fundraising Message Animation */
+.fundraising-message {
+  /* REMOVE all animation temporarily */
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.fundraising-message p {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.animate-line {
+  opacity: 0;
+  transform: translateY(20px);
+  display: block;
+}
+
+.animate-line.delay-1 {
+  animation: lineFadeUp 0.8s ease-out 0.3s forwards;
+}
+
+.animate-line.delay-2 {
+  animation: lineFadeUp 0.8s ease-out 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fundraising-message {
+    animation-duration: 1s;
+  }
+}
+
+.progress-text {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Courier New', monospace; /* Typewriter font */
+}
+
+/* Blinking cursor effect */
+/* .progress-text::after {
+  content: '';
+  animation: blink 1s infinite;
+} */
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
