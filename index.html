@@ -97,14 +97,76 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <!-- Zelle - CLEANED UP -->
-  <div class="zelle-box">
+  <!-- <div class="zelle-box">
     <h4>Zelle Giving</h4>
-    <p>Send to: <strong>projectararat2024@gmail.com</strong></p>
-    <a class="btn zelle" href="mailto:projectararat2024@gmail.com?subject=Project ARARAT Donation">
+    <p>Send to: <strong>pkaranjaxn@gmail.com</strong></p>
+    <a class="btn zelle" href="mailto:pkaranjaxn@gmail.com?subject=Project ARARAT Donation">
       Send via Zelle
     </a>
-    <p class="note">Note: direct pay to JCC-Include your name AND "PAUL" in memo.</p>
-  </div>
+    <p class="note">Note: direct pay to "PAUL"  add in memo.</p>
+  </div> -->
+ <div class="zelle-box">
+  <h4>Zelle Giving</h4>
+
+  <p>
+    Send to:
+    <strong id="zelle-email">pkaranjaxn@gmail.com</strong>
+    <button class="btn zelle-copy" type="button" onclick="copyZelleEmail(event)">
+  Copy email
+</button>
+  </p>
+
+  <p class="note">Note: direct pay to "PAUL" add in memo.</p>
+</div>
+
+<!-- CLICK TO COPY EMAIL SCRIPT -->
+
+
+<script>
+async function copyZelleEmail(event) {
+  const emailEl = document.getElementById('zelle-email');
+  const email = emailEl.textContent.trim();
+  const button = event.target;
+  
+  try {
+    await navigator.clipboard.writeText(email);
+    showCopyFeedback(button, 'Copied!');
+  } catch (err) {
+    fallbackCopy(email, button);
+  }
+}
+
+function fallbackCopy(text, button) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  textArea.style.left = '-999999px';
+  textArea.style.top = '-999999px';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    showCopyFeedback(button, 'Copied!');
+  } catch (err) {
+    document.body.removeChild(textArea);
+    showCopyFeedback(button, 'Copy manually');
+  }
+}
+
+function showCopyFeedback(button, message) {
+  const originalText = button.textContent;
+  button.textContent = message;
+  button.style.backgroundColor = '#28a745';
+  
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.style.backgroundColor = '';
+  }, 1500);
+}
+</script>
 
   <!-- Pushpay - CLEANED UP -->
   <div class="pushpay-box">
@@ -123,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Contact and Event Info -->
 
     <section class="event-info">
-  <h3> 📅Fundraising Day</h3>
+  <h3> 🚀Fundraising Day</h3>
   <p><strong>May 1st,2026</strong></p>
 
   <h3>📞 Contact</h3>

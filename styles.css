@@ -433,7 +433,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* CASH APP - Green */
+/* CASH APP - Green
 .cashapp-box {
   background: linear-gradient(135deg, rgba(0,200,68,0.18), rgba(0,230,118,0.12));
   padding: 1.8rem;
@@ -449,9 +449,85 @@ body {
   margin: 0 0 1rem 0;
   font-size: 1.15rem;
   font-weight: 800;
+} */
+
+/* CASH APP - Green (enhanced) */
+.cashapp-box {
+  background: linear-gradient(135deg, rgba(0,200,68,0.18), rgba(0,230,118,0.12));
+  padding: 1.8rem;
+  border-radius: 18px;
+  border: 3px solid #00c244;
+  margin: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,194,68,0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-/* ZELLE - Bright Blue */
+.cashapp-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,194,68,0.35);
+  border-color: #00d857; /* slightly brighter green on hover */
+}
+
+/* Heading */
+.cashapp-box h4 {
+  color: #00c244;
+  margin: 0 0 1rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline accent on hover */
+.cashapp-box h4::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.25rem;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00c244, #00e676);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.cashapp-box:hover h4::after {
+  width: 70%;
+}
+
+/* ZELLE */
+.btn.zelle-copy {
+  background-color: #6a0dad;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.18s ease;  /* smooth transitions */
+  box-shadow: 0 2px 8px rgba(106, 13, 173, 0.3);
+  position: relative;
+  min-height: 36px;  /* consistent touch target */
+}
+
+.btn.zelle-copy:hover {
+  background-color: #7a1bbd;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.4);
+}
+
+.btn.zelle-copy:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(106, 13, 173, 0.3);
+  background-color: #5a0bb5;
+}
+/* ZELLE - Bright Blue
 .zelle-box {
   background: linear-gradient(135deg, rgba(74,134,232,0.18), rgba(46,100,211,0.12));
   padding: 1.8rem;
@@ -467,10 +543,57 @@ body {
   margin: 0 0 1rem 0;
   font-size: 1.15rem;
   font-weight: 800;
+} */
+ /* ZELLE - Bright Blue (enhanced) */
+.zelle-box {
+  background: linear-gradient(135deg, rgba(74,134,232,0.18), rgba(46,100,211,0.12));
+  padding: 1.8rem;
+  border-radius: 18px;
+  border: 3px solid #4a86e8;
+  margin: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(74,134,232,0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.zelle-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(74,134,232,0.35);
+  border-color: #5a96ff;
+}
+
+/* Heading */
+.zelle-box h4 {
+  color: #88105a;
+  margin: 0 0 1rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline accent on hover */
+.zelle-box h4::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.25rem;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4a86e8, #88105a);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.zelle-box:hover h4::after {
+  width: 70%;
 }
 
 /* PUSHPAY - Rich Blue/Black */
-.pushpay-box {
+/* .pushpay-box {
   background: linear-gradient(135deg, rgba(27,58,102,0.25), rgba(0,0,0,0.15));
   padding: 1.8rem;
   border-radius: 18px;
@@ -485,6 +608,54 @@ body {
   margin: 0 0 1rem 0;
   font-size: 1.15rem;
   font-weight: 800;
+} */
+
+/* PUSHPAY - Deep Blue (enhanced) */
+.pushpay-box {
+  background: linear-gradient(135deg, rgba(27,58,102,0.25), rgba(0,0,0,0.15));
+  padding: 1.8rem;
+  border-radius: 18px;
+  border: 3px solid var(--blue);
+  margin: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(27,58,102,0.3);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.pushpay-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(27,58,102,0.45);
+  border-color: #3f6fb8; /* slightly lighter blue on hover */
+}
+
+/* Heading */
+.pushpay-box h4 {
+  color: var(--blue);
+  margin: 0 0 1rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline accent on hover (mirrors Zelle behavior) */
+.pushpay-box h4::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.25rem;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), #ffffff);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.pushpay-box:hover h4::after {
+  width: 70%;
 }
 
 /* RESPONSIVE PERFECTION */
